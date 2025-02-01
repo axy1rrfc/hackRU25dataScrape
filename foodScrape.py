@@ -36,8 +36,8 @@ with open(csv_file, "w", newline="", encoding="utf-8") as file:
                 time.sleep(2)
 
                 # Extract dish name (<h2>)
-                dish_name = driver.find_element(By.CSS_SELECTOR, "td[style='width:35%'] h2 a").text
-
+                dish_name = driver.find_element(By.XPATH, '//td[@style="width:35%"]/h2').text
+                
                 # Extract ingredients (<figcaption>)
                 ingredients = [elem.text for elem in driver.find_elements(By.CSS_SELECTOR, "figcaption")]
 
